@@ -1,38 +1,176 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: lightgray;
+  margin-bottom: 50px;
+  height: 100px;
+}
+
+.introduction {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro-text {
+  width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  list-style-type: none;
+  background-color: white;
+  color: black;
+  height: 150px;
+  width: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-link {
+  text-decoration: none;
+  color: black;
+  margin-right: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-link:hover {
+  cursor: pointer;
+}
+
+.contactarea1, .contactarea2 {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contactinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  height: 200px;
+  width: 200px;
+  margin-top: 50px;
+}
+
+.contactform {
+  height: 500px;
+  width: 50%;
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contactform input[type=text], input[type=email], textarea {
+  width: 80%;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.contactform input[type=submit], input[type=reset] {
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+@keyframes formbuttons {
+  from { background-color: white; }
+  to { background-color: green; }
+}
+
+.contactform input[type=submit]:hover, input[type=reset]:hover {
+  background-color: green;
+  animation-name: formbuttons;
+  animation-duration: 0.5s;
+}
+
+.formcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactform textarea {
+  width: 250px;
+  height: 100px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: lightgrey;
+  height: 100px;
+  margin-top: 100px;
+}
+
+.restaurant-name {
+  color: green;
+}
+
+.menu {
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-items {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 300px;
+  width: 200px;
+  margin: 20px 100px;
+}
+
+.menu-day {
+  color: green;
 }
