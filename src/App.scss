@@ -1,0 +1,179 @@
+@import "./include-media.scss";
+
+$focusColor: #009933;
+$textColor: black;
+$customBorder: 1px solid black;
+$formMargin: 20px;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  @include flex(row, flex-end, center);
+  @include media("<=tablet") {
+    @include flex(row, space-evenly, center);
+  }
+  background-color: lightgray;
+  margin-bottom: 50px;
+  .app-link {
+    @include media(">tablet") {
+      margin-right: 50px;
+    }
+    padding: 50px 0;
+    text-decoration: none;
+    color: $textColor;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.introduction {
+  @include flex(column, space-between, center);
+  text-align: center;
+  img {
+    margin: 50px 0;
+  }
+  .intro-text {
+    width: 80%;
+  }
+  .restaurant-name {
+    color: $focusColor;
+  }
+}
+
+.menu {
+  @include flex(column, space-evenly, center);
+  margin-top: 100px;
+  text-align: center;
+  p {
+    width: 80%;
+  }
+  .menu-items {
+    @include flex(column, space-between, center);
+    height: 2000px;
+    margin-top: 50px;
+    .menu-item {
+      @include flex(column, space-evenly, center);
+      background-color: white;
+      border: $customBorder;
+      height: 300px;
+      width: 200px;
+      .menu-day {
+        color: $focusColor;
+      }
+    }
+  }
+}
+
+.contactarea1,
+.contactarea2 {
+  @include flex(column, space-evenly, center);
+  margin-top: 100px;
+}
+
+.contactinfo {
+  @include flex(column, space-around, center);
+  background-color: white;
+  color: $textColor;
+  border: $customBorder;
+  font-weight: bold;
+  height: 200px;
+  width: 200px;
+  margin-top: 50px;
+}
+
+@keyframes formbuttons {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: $focusColor;
+  }
+}
+
+.contactform {
+  @include flex(column, space-evenly, center);
+  width: 50%;
+  margin-top: 50px;
+  border: $customBorder;
+  border-radius: 5px;
+  background-color: white;
+  .formcontainer {
+    @include flex(row, center, center);
+    @include media("<=tablet") {
+      @include flex(column, center, center);
+    }
+    margin: $formMargin;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: $customBorder;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type="email"] {
+    @extend input[type="text"];
+  }
+  textarea {
+    @extend input[type="text"];
+    width: 80%;
+    height: 150px;
+    margin: $formMargin;
+  }
+  input[type="submit"] {
+    width: 100px;
+    padding: 15px;
+    margin: $formMargin;
+    border: $customBorder;
+    border-radius: 5px;
+    background-color: white;
+    color: $textColor;
+    cursor: pointer;
+    &:hover {
+      background-color: $focusColor;
+      animation-name: formbuttons;
+      animation-duration: 0.5s;
+    }
+  }
+  input[type="reset"] {
+    @extend input[type="submit"];
+  }
+}
+
+footer {
+  @include flex(row, center, center);
+  color: $textColor;
+  background-color: lightgrey;
+  height: 100px;
+  margin-top: 100px;
+  .social-buttons {
+    @include flex(row, space-evenly, center);
+    width: 10%;
+    margin-left: 30px;
+    .twitter, .facebook, .instagram {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .twitter {
+      color: lightseagreen;
+    }
+    .facebook {
+      color: blue;
+    }
+    .instagram {
+      color: purple;
+    }
+  }
+}

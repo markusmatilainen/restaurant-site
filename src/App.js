@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import restaurant from './restaurant-unsplash.jpg';
 import MenuItem from './components/MenuItem'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -17,6 +18,7 @@ function App() {
           during the day. Our menu consists of the most traditional and delicious Italian meals.
           Come and enjoy!
         </p>
+        <img src={restaurant} alt="Restaurant Gustoso" width="500px" height="350px" />
         <p>We are open at following times:</p>
         <b>Monday, Tuesday, Wednesday: 8am - 10pm</b>
         <b>Thursday, Friday: 9am - 11pm</b>
@@ -57,7 +59,7 @@ function App() {
             <input type="text" id="lname" name="lname" />
           </div>
           <div className="formcontainer">
-            <label for="email">Email:</label>
+            <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" />
           </div>
           <textarea id="message" name="message" placeholder="Write your message here..." />
