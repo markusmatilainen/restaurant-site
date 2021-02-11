@@ -1,7 +1,8 @@
 @import "./include-media.scss";
 
-$focusColor: #009933;
-$textColor: black;
+$focusColor: orange;
+$textColor: white;
+$backgroundColor: black;
 $customBorder: 1px solid black;
 $formMargin: 20px;
 
@@ -17,22 +18,41 @@ $formMargin: 20px;
   padding: 0;
 }
 
+body {
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("restaurant-unsplash5.jpg") repeat;
+}
+
+@keyframes headerlinks {
+  from {
+    color: $textColor;
+  }
+  to {
+    color: $focusColor;
+  }
+}
+
 header {
   @include flex(row, flex-end, center);
   @include media("<=tablet") {
     @include flex(row, space-evenly, center);
   }
-  background-color: lightgray;
   margin-bottom: 50px;
   .app-link {
     @include media(">tablet") {
       margin-right: 50px;
     }
-    padding: 50px 0;
+    margin-top: 50px;
     text-decoration: none;
     color: $textColor;
     &:hover {
       cursor: pointer;
+      color: $focusColor;
+      animation-name: headerlinks;
+      animation-duration: 0.5s;
     }
   }
 }
@@ -40,14 +60,17 @@ header {
 .introduction {
   @include flex(column, space-between, center);
   text-align: center;
-  img {
-    margin: 50px 0;
+  background-color: $backgroundColor;
+  opacity: 0.9;
+  color: $textColor;
+  .restaurant-name {
+    color: $focusColor;
   }
   .intro-text {
     width: 80%;
   }
-  .restaurant-name {
-    color: $focusColor;
+  .opening-times {
+    margin-top: 20px;
   }
 }
 
@@ -55,8 +78,15 @@ header {
   @include flex(column, space-evenly, center);
   margin-top: 100px;
   text-align: center;
-  p {
-    width: 80%;
+  color: $textColor;
+  .menu-text {
+    color: white;
+    background-color: $backgroundColor;
+    opacity: 0.9;
+    width: 60%;
+    h2 {
+      color: $focusColor;
+    }
   }
   .menu-items {
     @include flex(column, space-between, center);
@@ -64,8 +94,10 @@ header {
     margin-top: 50px;
     .menu-item {
       @include flex(column, space-evenly, center);
-      background-color: white;
+      background-color: $backgroundColor;
+      color: white;
       border: $customBorder;
+      opacity: 0.9;
       height: 300px;
       width: 200px;
       .menu-day {
@@ -79,11 +111,16 @@ header {
 .contactarea2 {
   @include flex(column, space-evenly, center);
   margin-top: 100px;
+  color: $textColor;
+  h2 {
+    color: $focusColor;
+  }
 }
 
 .contactinfo {
   @include flex(column, space-around, center);
-  background-color: white;
+  background-color: $backgroundColor;
+  opacity: 0.9;
   color: $textColor;
   border: $customBorder;
   font-weight: bold;
@@ -94,10 +131,12 @@ header {
 
 @keyframes formbuttons {
   from {
-    background-color: white;
+    background-color: $backgroundColor;
+    color: $textColor;
   }
   to {
     background-color: $focusColor;
+    color: black;
   }
 }
 
@@ -107,7 +146,8 @@ header {
   margin-top: 50px;
   border: $customBorder;
   border-radius: 5px;
-  background-color: white;
+  background-color: $backgroundColor;
+  color: $textColor;
   .formcontainer {
     @include flex(row, center, center);
     @include media("<=tablet") {
@@ -135,13 +175,14 @@ header {
     width: 100px;
     padding: 15px;
     margin: $formMargin;
-    border: $customBorder;
+    border: 1px solid $focusColor;
     border-radius: 5px;
-    background-color: white;
+    background-color: $backgroundColor;
     color: $textColor;
     cursor: pointer;
     &:hover {
       background-color: $focusColor;
+      color: black;
       animation-name: formbuttons;
       animation-duration: 0.5s;
     }
@@ -154,7 +195,7 @@ header {
 footer {
   @include flex(row, center, center);
   color: $textColor;
-  background-color: lightgrey;
+  background-color: $backgroundColor;
   height: 100px;
   margin-top: 100px;
   .social-buttons {
@@ -162,6 +203,7 @@ footer {
     width: 10%;
     margin-left: 30px;
     .twitter, .facebook, .instagram {
+      //background-color: white;
       &:hover {
         cursor: pointer;
       }

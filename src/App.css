@@ -3,6 +3,30 @@
   padding: 0;
 }
 
+body {
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("restaurant-unsplash5.jpg") repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("restaurant-unsplash5.jpg") repeat;
+}
+
+@-webkit-keyframes headerlinks {
+  from {
+    color: white;
+  }
+  to {
+    color: orange;
+  }
+}
+
+@keyframes headerlinks {
+  from {
+    color: white;
+  }
+  to {
+    color: orange;
+  }
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,7 +41,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: lightgray;
   margin-bottom: 50px;
 }
 
@@ -40,9 +63,9 @@ header {
 }
 
 header .app-link {
-  padding: 50px 0;
+  margin-top: 50px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 @media (min-width: 769px) {
@@ -53,6 +76,11 @@ header .app-link {
 
 header .app-link:hover {
   cursor: pointer;
+  color: orange;
+  -webkit-animation-name: headerlinks;
+          animation-name: headerlinks;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .introduction {
@@ -70,18 +98,21 @@ header .app-link:hover {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
 }
 
-.introduction img {
-  margin: 50px 0;
+.introduction .restaurant-name {
+  color: orange;
 }
 
 .introduction .intro-text {
   width: 80%;
 }
 
-.introduction .restaurant-name {
-  color: #009933;
+.introduction .opening-times {
+  margin-top: 20px;
 }
 
 .menu {
@@ -100,10 +131,18 @@ header .app-link:hover {
           align-items: center;
   margin-top: 100px;
   text-align: center;
+  color: white;
 }
 
-.menu p {
-  width: 80%;
+.menu .menu-text {
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  width: 60%;
+}
+
+.menu .menu-text h2 {
+  color: orange;
 }
 
 .menu .menu-items {
@@ -138,14 +177,16 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  background-color: black;
+  color: white;
   border: 1px solid black;
+  opacity: 0.9;
   height: 300px;
   width: 200px;
 }
 
 .menu .menu-items .menu-item .menu-day {
-  color: #009933;
+  color: orange;
 }
 
 .contactarea1,
@@ -164,6 +205,12 @@ header .app-link:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 100px;
+  color: white;
+}
+
+.contactarea1 h2,
+.contactarea2 h2 {
+  color: orange;
 }
 
 .contactinfo {
@@ -179,8 +226,9 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
-  color: black;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
   border: 1px solid black;
   font-weight: bold;
   height: 200px;
@@ -190,19 +238,23 @@ header .app-link:hover {
 
 @-webkit-keyframes formbuttons {
   from {
-    background-color: white;
+    background-color: black;
+    color: white;
   }
   to {
-    background-color: #009933;
+    background-color: orange;
+    color: black;
   }
 }
 
 @keyframes formbuttons {
   from {
-    background-color: white;
+    background-color: black;
+    color: white;
   }
   to {
-    background-color: #009933;
+    background-color: orange;
+    color: black;
   }
 }
 
@@ -224,7 +276,8 @@ header .app-link:hover {
   margin-top: 50px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: black;
+  color: white;
 }
 
 .contactform .formcontainer {
@@ -281,15 +334,16 @@ header .app-link:hover {
   width: 100px;
   padding: 15px;
   margin: 20px;
-  border: 1px solid black;
+  border: 1px solid orange;
   border-radius: 5px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   cursor: pointer;
 }
 
 .contactform input[type="submit"]:hover, .contactform input:hover[type="reset"] {
-  background-color: #009933;
+  background-color: orange;
+  color: black;
   -webkit-animation-name: formbuttons;
           animation-name: formbuttons;
   -webkit-animation-duration: 0.5s;
@@ -310,8 +364,8 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: black;
-  background-color: lightgrey;
+  color: white;
+  background-color: black;
   height: 100px;
   margin-top: 100px;
 }

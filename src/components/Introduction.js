@@ -1,0 +1,26 @@
+import React from "react";
+import '../App.css';
+import restaurant from '../restaurant-unsplash.jpg';
+
+function Introduction() {
+  return (
+    <div className="introduction" id="introduction">
+        <h1 className="restaurant-name">Restaurant Gustoso</h1>
+        <p className="intro-text">Restaurant Gustoso aims to be one of the finest Italian restaurant in Rome!
+          Since 2006, we have been one of the most enjoyable places to sit down and enjoy meals
+          during the day. Our menu consists of the most traditional and delicious Italian meals.
+          Come and enjoy!
+        </p>
+        {/*<img src={restaurant} alt="Restaurant Gustoso" width="500px" height="350px" />*/}
+        <div className="opening-times">
+          <h3>We are open at following times:</h3>
+          <p>Monday, Tuesday, Wednesday: 8am - 10pm</p>
+          <p>Thursday, Friday: 9am - 11pm</p>
+          <p>Saturday: 10am - 11pm</p>
+          <p>Sunday: closed</p>
+        </div>
+    </div>
+  );
+}
+
+export default Introduction;

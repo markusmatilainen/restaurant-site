@@ -1,13 +1,14 @@
 import React from "react";
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <header className="header">
-        <a className="app-link" href="#introduction">Introduction</a>
-        <a className="app-link" href="#menu">Menu</a>
-        <a className="app-link" href="#contact">Contact</a>
-        <a className="app-link" href="#form">Form</a>
+      <Link to="/" className="app-link">Introduction</Link>
+      <Link to="/menu" className="app-link">Menu</Link>
+      <Link to="/contactinfo" className="app-link">Contact</Link>
+      <Link to="/contactform" className="app-link">Form</Link>
     </header>
   );
 }
