@@ -1,12 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Introduction from './components/Introduction';
 import Menu from './components/Menu';
-import ContactInfo from './components/ContactInfo';
-import ContactForm from "./components/ContactForm";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Introduction} />
           <Route path="/menu" exact component={Menu} />
-          <Route path="/contactinfo" exact component={ContactInfo} />
-          <Route path="/contactform" exact component={ContactForm} />
+          <Route path="/contact" exact component={Contact} />
         </Switch>
         <Footer />
       </div>

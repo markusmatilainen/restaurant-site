@@ -5,26 +5,9 @@
 
 body {
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("restaurant-unsplash5.jpg") repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("restaurant-unsplash5.jpg") repeat;
-}
-
-@-webkit-keyframes headerlinks {
-  from {
-    color: white;
-  }
-  to {
-    color: orange;
-  }
-}
-
-@keyframes headerlinks {
-  from {
-    color: white;
-  }
-  to {
-    color: orange;
-  }
+  background: url("restaurant-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -42,6 +25,8 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 50px;
+  background-color: black;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
@@ -63,7 +48,8 @@ header {
 }
 
 header .app-link {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-decoration: none;
   color: white;
 }
@@ -76,11 +62,6 @@ header .app-link {
 
 header .app-link:hover {
   cursor: pointer;
-  color: orange;
-  -webkit-animation-name: headerlinks;
-          animation-name: headerlinks;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
 }
 
 .introduction {
@@ -91,28 +72,26 @@ header .app-link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
   background-color: black;
   opacity: 0.9;
+  height: 300px;
   color: white;
 }
 
-.introduction .restaurant-name {
-  color: orange;
+@media (max-width: 768px) {
+  .introduction {
+    height: 400px;
+  }
 }
 
 .introduction .intro-text {
   width: 80%;
-}
-
-.introduction .opening-times {
-  margin-top: 20px;
 }
 
 .menu {
@@ -135,14 +114,9 @@ header .app-link:hover {
 }
 
 .menu .menu-text {
-  color: white;
   background-color: black;
   opacity: 0.9;
-  width: 60%;
-}
-
-.menu .menu-text h2 {
-  color: orange;
+  padding: 20px;
 }
 
 .menu .menu-items {
@@ -179,14 +153,9 @@ header .app-link:hover {
           align-items: center;
   background-color: black;
   color: white;
-  border: 1px solid black;
   opacity: 0.9;
   height: 300px;
   width: 200px;
-}
-
-.menu .menu-items .menu-item .menu-day {
-  color: orange;
 }
 
 .contactarea1,
@@ -198,19 +167,22 @@ header .app-link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-top: 100px;
   color: white;
+  text-align: center;
 }
 
 .contactarea1 h2,
 .contactarea2 h2 {
-  color: orange;
+  background-color: black;
+  opacity: 0.9;
+  padding: 15px 20px;
 }
 
 .contactinfo {
@@ -226,14 +198,12 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 50px;
   background-color: black;
   opacity: 0.9;
   color: white;
-  border: 1px solid black;
-  font-weight: bold;
   height: 200px;
   width: 200px;
-  margin-top: 50px;
 }
 
 @-webkit-keyframes formbuttons {
@@ -242,7 +212,7 @@ header .app-link:hover {
     color: white;
   }
   to {
-    background-color: orange;
+    background-color: white;
     color: black;
   }
 }
@@ -253,7 +223,7 @@ header .app-link:hover {
     color: white;
   }
   to {
-    background-color: orange;
+    background-color: white;
     color: black;
   }
 }
@@ -274,8 +244,7 @@ header .app-link:hover {
           align-items: center;
   width: 50%;
   margin-top: 50px;
-  border: 1px solid black;
-  border-radius: 5px;
+  height: 500px;
   background-color: black;
   color: white;
 }
@@ -294,7 +263,6 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 20px;
 }
 
 @media (max-width: 768px) {
@@ -315,7 +283,7 @@ header .app-link:hover {
   }
 }
 
-.contactform input[type="text"], .contactform input[type="email"], .contactform textarea {
+.contactform input[type="text"], .contactform textarea, .contactform input[type="email"] {
   width: 100%;
   padding: 15px;
   border: 1px solid black;
@@ -326,23 +294,21 @@ header .app-link:hover {
 
 .contactform textarea {
   width: 80%;
-  height: 150px;
-  margin: 20px;
+  height: 100px;
 }
 
 .contactform input[type="submit"], .contactform input[type="reset"] {
-  width: 100px;
   padding: 15px;
-  margin: 20px;
-  border: 1px solid orange;
+  width: 100px;
+  border: 1px solid white;
   border-radius: 5px;
   background-color: black;
   color: white;
-  cursor: pointer;
 }
 
-.contactform input[type="submit"]:hover, .contactform input:hover[type="reset"] {
-  background-color: orange;
+.contactform input[type="submit"]:hover, .contactform input[type="reset"]:hover {
+  cursor: pointer;
+  background-color: white;
   color: black;
   -webkit-animation-name: formbuttons;
           animation-name: formbuttons;
@@ -366,8 +332,8 @@ footer {
           align-items: center;
   color: white;
   background-color: black;
-  height: 100px;
   margin-top: 100px;
+  padding: 50px;
 }
 
 footer .social-buttons {
@@ -378,9 +344,9 @@ footer .social-buttons {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -388,19 +354,11 @@ footer .social-buttons {
   margin-left: 30px;
 }
 
-footer .social-buttons .twitter:hover, footer .social-buttons .facebook:hover, footer .social-buttons .instagram:hover {
+footer .social-buttons .social-btn {
+  color: white;
+}
+
+footer .social-buttons .social-btn:hover {
   cursor: pointer;
-}
-
-footer .social-buttons .twitter {
-  color: lightseagreen;
-}
-
-footer .social-buttons .facebook {
-  color: blue;
-}
-
-footer .social-buttons .instagram {
-  color: purple;
 }
 /*# sourceMappingURL=App.css.map */

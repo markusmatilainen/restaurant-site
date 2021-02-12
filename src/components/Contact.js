@@ -1,10 +1,19 @@
 import React from "react";
 import '../App.css';
 
-function ContactForm() {
+function Contact() {
   return (
-    <div className="contactarea2" id="form">
-        <h2>... or use the form below</h2>
+    <div>
+      <div className="contactarea1" id="contact">
+        <h2>Contact Us</h2>
+        <div className="contactinfo">
+          <p>Phone: 123456789</p>
+          <p>95 Viale Eritrea</p>
+          <p>Rome, Lazio</p>
+        </div>
+      </div>
+      <div className="contactarea2" id="form">
+        <h2>Contact Form</h2>
         <form className="contactform">
           <div className="formcontainer">
             <label for="fname">First name:</label>
@@ -22,8 +31,9 @@ function ContactForm() {
           <input type="submit" value="Submit" />
           <input type="reset" />
         </form>
+      </div>
     </div>
   );
 }
 
-export default ContactForm;
+export default Contact;

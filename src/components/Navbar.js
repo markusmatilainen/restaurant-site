@@ -7,8 +7,7 @@ function Navbar() {
     <header className="header">
       <Link to="/" className="app-link">Introduction</Link>
       <Link to="/menu" className="app-link">Menu</Link>
-      <Link to="/contactinfo" className="app-link">Contact</Link>
-      <Link to="/contactform" className="app-link">Form</Link>
+      <Link to="/contact" className="app-link">Contact</Link>
     </header>
   );
 }

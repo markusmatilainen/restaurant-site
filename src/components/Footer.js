@@ -13,13 +13,13 @@ function Footer() {
         <small>Copyright &copy; {currentYear} Restaurant Gustoso. All Rights Reserved</small>
         <div className="social-buttons">
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="twitter" />
+            <FaTwitter className="twitter social-btn" />
           </a>
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="facebook" />
+            <FaFacebook className="facebook social-btn" />
           </a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="instagram" />
+            <FaInstagram className="instagram social-btn" />
           </a>
         </div>
     </footer>

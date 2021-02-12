@@ -1,10 +1,7 @@
 @import "./include-media.scss";
 
-$focusColor: orange;
-$textColor: white;
-$backgroundColor: black;
-$customBorder: 1px solid black;
-$formMargin: 20px;
+$mainColor: white;
+$secondaryColor: black;
 
 @mixin flex($direction, $justify, $align) {
   display: flex;
@@ -20,19 +17,9 @@ $formMargin: 20px;
 
 body {
   height: 100%;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url("restaurant-unsplash5.jpg") repeat;
-}
-
-@keyframes headerlinks {
-  from {
-    color: $textColor;
-  }
-  to {
-    color: $focusColor;
-  }
+  background: url("restaurant-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -41,36 +28,34 @@ header {
     @include flex(row, space-evenly, center);
   }
   margin-bottom: 50px;
+  background-color: $secondaryColor;
+  opacity: 0.9;
   .app-link {
     @include media(">tablet") {
       margin-right: 50px;
     }
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-decoration: none;
-    color: $textColor;
+    color: $mainColor;
     &:hover {
       cursor: pointer;
-      color: $focusColor;
-      animation-name: headerlinks;
-      animation-duration: 0.5s;
     }
   }
 }
 
 .introduction {
-  @include flex(column, space-between, center);
-  text-align: center;
-  background-color: $backgroundColor;
-  opacity: 0.9;
-  color: $textColor;
-  .restaurant-name {
-    color: $focusColor;
+  @include flex(column, space-around, center);
+  @include media("<=tablet") {
+    height: 400px;
   }
+  text-align: center;
+  background-color: $secondaryColor;
+  opacity: 0.9;
+  height: 300px;
+  color: $mainColor;
   .intro-text {
     width: 80%;
-  }
-  .opening-times {
-    margin-top: 20px;
   }
 }
 
@@ -78,15 +63,11 @@ header {
   @include flex(column, space-evenly, center);
   margin-top: 100px;
   text-align: center;
-  color: $textColor;
+  color: $mainColor;
   .menu-text {
-    color: white;
-    background-color: $backgroundColor;
+    background-color: $secondaryColor;
     opacity: 0.9;
-    width: 60%;
-    h2 {
-      color: $focusColor;
-    }
+    padding: 20px;
   }
   .menu-items {
     @include flex(column, space-between, center);
@@ -94,49 +75,46 @@ header {
     margin-top: 50px;
     .menu-item {
       @include flex(column, space-evenly, center);
-      background-color: $backgroundColor;
-      color: white;
-      border: $customBorder;
+      background-color: $secondaryColor;
+      color: $mainColor;
       opacity: 0.9;
       height: 300px;
       width: 200px;
-      .menu-day {
-        color: $focusColor;
-      }
     }
   }
 }
 
 .contactarea1,
 .contactarea2 {
-  @include flex(column, space-evenly, center);
+  @include flex(column, space-between, center);
   margin-top: 100px;
-  color: $textColor;
+  color: $mainColor;
+  text-align: center;
   h2 {
-    color: $focusColor;
+    background-color: $secondaryColor;
+    opacity: 0.9;
+    padding: 15px 20px;
   }
 }
 
 .contactinfo {
   @include flex(column, space-around, center);
-  background-color: $backgroundColor;
+  margin-top: 50px;
+  background-color: $secondaryColor;
   opacity: 0.9;
-  color: $textColor;
-  border: $customBorder;
-  font-weight: bold;
+  color: $mainColor;
   height: 200px;
   width: 200px;
-  margin-top: 50px;
 }
 
 @keyframes formbuttons {
   from {
-    background-color: $backgroundColor;
-    color: $textColor;
+    background-color: $secondaryColor;
+    color: $mainColor;
   }
   to {
-    background-color: $focusColor;
-    color: black;
+    background-color: $mainColor;
+    color: $secondaryColor;
   }
 }
 
@@ -144,78 +122,59 @@ header {
   @include flex(column, space-evenly, center);
   width: 50%;
   margin-top: 50px;
-  border: $customBorder;
-  border-radius: 5px;
-  background-color: $backgroundColor;
-  color: $textColor;
+  height: 500px;
+  background-color: $secondaryColor;
+  color: $mainColor;
   .formcontainer {
     @include flex(row, center, center);
     @include media("<=tablet") {
       @include flex(column, center, center);
     }
-    margin: $formMargin;
   }
-  input[type="text"] {
+  input[type="text"], input[type="email"] {
     width: 100%;
     padding: 15px;
-    border: $customBorder;
+    border: 1px solid black;
     border-radius: 5px;
     box-sizing: border-box;
-  }
-  input[type="email"] {
-    @extend input[type="text"];
   }
   textarea {
     @extend input[type="text"];
     width: 80%;
-    height: 150px;
-    margin: $formMargin;
+    height: 100px;
   }
-  input[type="submit"] {
-    width: 100px;
+  input[type="submit"], input[type="reset"] {
     padding: 15px;
-    margin: $formMargin;
-    border: 1px solid $focusColor;
+    width: 100px;
+    border: 1px solid $mainColor;
     border-radius: 5px;
-    background-color: $backgroundColor;
-    color: $textColor;
-    cursor: pointer;
+    background-color: $secondaryColor;
+    color: $mainColor;
     &:hover {
-      background-color: $focusColor;
-      color: black;
+      cursor: pointer;
+      background-color: $mainColor;
+      color: $secondaryColor;
       animation-name: formbuttons;
       animation-duration: 0.5s;
     }
-  }
-  input[type="reset"] {
-    @extend input[type="submit"];
   }
 }
 
 footer {
   @include flex(row, center, center);
-  color: $textColor;
-  background-color: $backgroundColor;
-  height: 100px;
+  color: $mainColor;
+  background-color: $secondaryColor;
   margin-top: 100px;
+  padding: 50px;
   .social-buttons {
-    @include flex(row, space-evenly, center);
+    @include flex(row, space-between, center);
     width: 10%;
     margin-left: 30px;
-    .twitter, .facebook, .instagram {
-      //background-color: white;
+    .social-btn {
+      color: $mainColor;
       &:hover {
         cursor: pointer;
       }
-    }
-    .twitter {
-      color: lightseagreen;
-    }
-    .facebook {
-      color: blue;
-    }
-    .instagram {
-      color: purple;
     }
   }
 }
