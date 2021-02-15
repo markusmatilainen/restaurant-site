@@ -24,9 +24,10 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 50px;
+  color: white;
   background-color: black;
   opacity: 0.9;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 768px) {
@@ -48,10 +49,10 @@ header {
 }
 
 header .app-link {
+  color: white;
   margin-top: 30px;
   margin-bottom: 30px;
   text-decoration: none;
-  color: white;
 }
 
 @media (min-width: 769px) {
@@ -77,11 +78,11 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  color: white;
   background-color: black;
   opacity: 0.9;
+  text-align: center;
   height: 300px;
-  color: white;
 }
 
 @media (max-width: 768px) {
@@ -108,14 +109,10 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 100px;
-  text-align: center;
   color: white;
-}
-
-.menu .menu-text {
   background-color: black;
   opacity: 0.9;
+  text-align: center;
   padding: 20px;
 }
 
@@ -133,7 +130,6 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2000px;
   margin-top: 50px;
 }
 
@@ -151,15 +147,11 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: black;
-  color: white;
-  opacity: 0.9;
   height: 300px;
   width: 200px;
 }
 
-.contactarea1,
-.contactarea2 {
+.contactareas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,19 +165,9 @@ header .app-link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 100px;
-  color: white;
-  text-align: center;
 }
 
-.contactarea1 h2,
-.contactarea2 h2 {
-  background-color: black;
-  opacity: 0.9;
-  padding: 15px 20px;
-}
-
-.contactinfo {
+.contactarea1, .contactarea2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,38 +175,58 @@ header .app-link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 50px;
+  color: white;
   background-color: black;
   opacity: 0.9;
+  width: 20%;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .contactarea1, .contactarea2 {
+    width: 100%;
+  }
+}
+
+.contactarea1 h2, .contactarea2 h2 {
+  margin-bottom: 20px;
+}
+
+.contactarea1 .contact-icon, .contactarea2 .contact-icon {
   color: white;
-  height: 200px;
-  width: 200px;
+}
+
+.contactarea2 {
+  width: 100%;
 }
 
 @-webkit-keyframes formbuttons {
   from {
-    background-color: black;
     color: white;
+    background-color: black;
   }
   to {
-    background-color: white;
     color: black;
+    background-color: white;
   }
 }
 
 @keyframes formbuttons {
   from {
-    background-color: black;
     color: white;
+    background-color: black;
   }
   to {
-    background-color: white;
     color: black;
+    background-color: white;
   }
 }
 
@@ -243,44 +245,23 @@ header .app-link:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
-  margin-top: 50px;
-  height: 500px;
-  background-color: black;
-  color: white;
+  height: 600px;
 }
 
 .contactform .formcontainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media (max-width: 768px) {
-  .contactform .formcontainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
 }
 
 .contactform input[type="text"], .contactform textarea, .contactform input[type="email"] {
@@ -293,8 +274,7 @@ header .app-link:hover {
 }
 
 .contactform textarea {
-  width: 80%;
-  height: 100px;
+  height: 150px;
 }
 
 .contactform input[type="submit"], .contactform input[type="reset"] {
@@ -302,14 +282,14 @@ header .app-link:hover {
   width: 100px;
   border: 1px solid white;
   border-radius: 5px;
-  background-color: black;
   color: white;
+  background-color: black;
 }
 
 .contactform input[type="submit"]:hover, .contactform input[type="reset"]:hover {
   cursor: pointer;
-  background-color: white;
   color: black;
+  background-color: white;
   -webkit-animation-name: formbuttons;
           animation-name: formbuttons;
   -webkit-animation-duration: 0.5s;

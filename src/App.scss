@@ -10,6 +10,12 @@ $secondaryColor: black;
   align-items: $align;
 }
 
+@mixin cardStyles() {
+  color: $mainColor;
+  background-color: $secondaryColor;
+  opacity: 0.9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,20 +30,19 @@ body {
 
 header {
   @include flex(row, flex-end, center);
+  @include cardStyles();
   @include media("<=tablet") {
     @include flex(row, space-evenly, center);
   }
   margin-bottom: 50px;
-  background-color: $secondaryColor;
-  opacity: 0.9;
   .app-link {
     @include media(">tablet") {
       margin-right: 50px;
     }
+    color: $mainColor;
     margin-top: 30px;
     margin-bottom: 30px;
     text-decoration: none;
-    color: $mainColor;
     &:hover {
       cursor: pointer;
     }
@@ -46,14 +51,12 @@ header {
 
 .introduction {
   @include flex(column, space-around, center);
+  @include cardStyles();
   @include media("<=tablet") {
     height: 400px;
   }
   text-align: center;
-  background-color: $secondaryColor;
-  opacity: 0.9;
   height: 300px;
-  color: $mainColor;
   .intro-text {
     width: 80%;
   }
@@ -61,75 +64,64 @@ header {
 
 .menu {
   @include flex(column, space-evenly, center);
-  margin-top: 100px;
+  @include cardStyles();
   text-align: center;
-  color: $mainColor;
-  .menu-text {
-    background-color: $secondaryColor;
-    opacity: 0.9;
-    padding: 20px;
-  }
+  padding: 20px;
   .menu-items {
     @include flex(column, space-between, center);
-    height: 2000px;
     margin-top: 50px;
     .menu-item {
       @include flex(column, space-evenly, center);
-      background-color: $secondaryColor;
-      color: $mainColor;
-      opacity: 0.9;
       height: 300px;
       width: 200px;
     }
   }
 }
 
-.contactarea1,
-.contactarea2 {
+.contactareas {
   @include flex(column, space-between, center);
-  margin-top: 100px;
-  color: $mainColor;
+}
+
+.contactarea1 {
+  @include flex(column, space-evenly, center);
+  @include cardStyles();
+  @include media("<=tablet") {
+    width: 100%;
+  }
+  width: 20%;
+  margin-bottom: 50px;
   text-align: center;
+  padding: 20px 0;
   h2 {
-    background-color: $secondaryColor;
-    opacity: 0.9;
-    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+  .contact-icon {
+    color: $mainColor;
   }
 }
 
-.contactinfo {
-  @include flex(column, space-around, center);
-  margin-top: 50px;
-  background-color: $secondaryColor;
-  opacity: 0.9;
-  color: $mainColor;
-  height: 200px;
-  width: 200px;
+.contactarea2 {
+  @extend .contactarea1;
+  width: 100%;
 }
 
 @keyframes formbuttons {
   from {
-    background-color: $secondaryColor;
     color: $mainColor;
+    background-color: $secondaryColor;
   }
   to {
-    background-color: $mainColor;
     color: $secondaryColor;
+    background-color: $mainColor;
   }
 }
 
 .contactform {
   @include flex(column, space-evenly, center);
   width: 50%;
-  margin-top: 50px;
-  height: 500px;
-  background-color: $secondaryColor;
-  color: $mainColor;
+  height: 600px;
   .formcontainer {
-    @include flex(row, center, center);
-    @include media("<=tablet") {
-      @include flex(column, center, center);
-    }
+    @include flex(column, center, center);
   }
   input[type="text"], input[type="email"] {
     width: 100%;
@@ -140,20 +132,19 @@ header {
   }
   textarea {
     @extend input[type="text"];
-    width: 80%;
-    height: 100px;
+    height: 150px;
   }
   input[type="submit"], input[type="reset"] {
     padding: 15px;
     width: 100px;
     border: 1px solid $mainColor;
     border-radius: 5px;
-    background-color: $secondaryColor;
     color: $mainColor;
+    background-color: $secondaryColor;
     &:hover {
       cursor: pointer;
-      background-color: $mainColor;
       color: $secondaryColor;
+      background-color: $mainColor;
       animation-name: formbuttons;
       animation-duration: 0.5s;
     }
