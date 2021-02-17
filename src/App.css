@@ -1,3 +1,25 @@
+@-webkit-keyframes buttonsAnimation {
+  from {
+    color: white;
+    background-color: black;
+  }
+  to {
+    color: black;
+    background-color: white;
+  }
+}
+
+@keyframes buttonsAnimation {
+  from {
+    color: white;
+    background-color: black;
+  }
+  to {
+    color: black;
+    background-color: white;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -116,6 +138,29 @@ header .app-link:hover {
   padding: 20px;
 }
 
+.menu button {
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.menu button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  -webkit-animation-name: buttonsAnimation;
+          animation-name: buttonsAnimation;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.menu button:focus {
+  color: black;
+  background-color: white;
+}
+
 .menu .menu-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,28 +253,6 @@ header .app-link:hover {
   width: 100%;
 }
 
-@-webkit-keyframes formbuttons {
-  from {
-    color: white;
-    background-color: black;
-  }
-  to {
-    color: black;
-    background-color: white;
-  }
-}
-
-@keyframes formbuttons {
-  from {
-    color: white;
-    background-color: black;
-  }
-  to {
-    color: black;
-    background-color: white;
-  }
-}
-
 .contactform {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,8 +313,8 @@ header .app-link:hover {
   cursor: pointer;
   color: black;
   background-color: white;
-  -webkit-animation-name: formbuttons;
-          animation-name: formbuttons;
+  -webkit-animation-name: buttonsAnimation;
+          animation-name: buttonsAnimation;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
 }

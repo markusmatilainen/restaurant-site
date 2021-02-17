@@ -16,6 +16,17 @@ $secondaryColor: black;
   opacity: 0.9;
 }
 
+@keyframes buttonsAnimation {
+  from {
+    color: $mainColor;
+    background-color: $secondaryColor;
+  }
+  to {
+    color: $secondaryColor;
+    background-color: $mainColor;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -67,6 +78,22 @@ header {
   @include cardStyles();
   text-align: center;
   padding: 20px;
+  button {
+    @include cardStyles();
+    border: 1px solid $mainColor;
+    padding: 20px;
+    &:hover {
+      cursor: pointer;
+      color: $secondaryColor;
+      background-color: $mainColor;
+      animation-name: buttonsAnimation;
+      animation-duration: 0.5s;
+    }
+    &:focus {
+      color: $secondaryColor;
+      background-color: $mainColor;
+    }
+  }
   .menu-items {
     @include flex(column, space-between, center);
     margin-top: 50px;
@@ -105,17 +132,6 @@ header {
   width: 100%;
 }
 
-@keyframes formbuttons {
-  from {
-    color: $mainColor;
-    background-color: $secondaryColor;
-  }
-  to {
-    color: $secondaryColor;
-    background-color: $mainColor;
-  }
-}
-
 .contactform {
   @include flex(column, space-evenly, center);
   width: 50%;
@@ -145,7 +161,7 @@ header {
       cursor: pointer;
       color: $secondaryColor;
       background-color: $mainColor;
-      animation-name: formbuttons;
+      animation-name: buttonsAnimation;
       animation-duration: 0.5s;
     }
   }
