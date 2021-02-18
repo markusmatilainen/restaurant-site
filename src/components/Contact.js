@@ -7,7 +7,7 @@ import { FaCity } from 'react-icons/fa'
 function Contact() {
   return (
     <div className="contactareas">
-      <div className="contactarea1" id="contact">
+      <div className="contactarea1">
         <h2>Contact Us</h2>
         <p><FaPhone className="contact-icon" /> 123456789</p>
         <p><FaStreetView className="contact-icon" /> 95 Viale Eritrea</p>

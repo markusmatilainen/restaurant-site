@@ -79,9 +79,12 @@ header {
   text-align: center;
   padding: 20px;
   button {
-    @include cardStyles();
+    width: 100px;
+    height: 50px;
+    margin: 20px 10px;
     border: 1px solid $mainColor;
-    padding: 20px;
+    color: $mainColor;
+    background-color: $secondaryColor;
     &:hover {
       cursor: pointer;
       color: $secondaryColor;
@@ -94,14 +97,10 @@ header {
       background-color: $mainColor;
     }
   }
-  .menu-items {
-    @include flex(column, space-between, center);
-    margin-top: 50px;
-    .menu-item {
-      @include flex(column, space-evenly, center);
-      height: 300px;
-      width: 200px;
-    }
+  .menu-item {
+    @include flex(column, space-evenly, center);
+    height: 300px;
+    width: 200px;
   }
 }
 

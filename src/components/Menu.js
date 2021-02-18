@@ -21,7 +21,7 @@ function Menu() {
       case 1:
         return <MenuItem day="Monday" main="Pizza ai quattro formaggi" dessert="Panettone" />;
       case 2:
-        return<MenuItem day="Tuesday" main="Lasagne" dessert="Crostata" />;
+        return <MenuItem day="Tuesday" main="Lasagne" dessert="Crostata" />;
       case 3:
         return <MenuItem day="Wednesday" main="Pizza al taglio" dessert="Tiramisu" />;
       case 4:
@@ -38,7 +38,7 @@ function Menu() {
   }
 
   return (
-    <div className="menu" id="menu">
+    <div className="menu">
         <div>
           <h2>Menu of the week</h2>
           <p>The price for lunch is 10 euros, and it includes the main dish, salad and dessert.</p>
@@ -50,9 +50,7 @@ function Menu() {
           <button onClick={() => changeDay(6)}>Saturday</button>
           <button onClick={() => changeDay(0)}>Sunday</button>
         </div>
-        <div className="menu-items">
-          {renderMenu(day)}
-        </div>
+        {renderMenu(day)}
     </div>
   );
 }
