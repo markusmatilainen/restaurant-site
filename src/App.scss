@@ -1,8 +1,19 @@
+/*
+Library that provides simple, elegant and maintainable media queries in Sass.
+@author Eduardo Boucas
+*/
 @import "./include-media.scss";
 
 $mainColor: white;
 $secondaryColor: black;
 
+///
+/// Assigns flexbox to an element with one line of code
+///
+/// @param {String} $direction - flex-direction value
+/// @param {String} $justify - justify-content value
+/// @param {String} $align - align-items value
+///
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -10,12 +21,18 @@ $secondaryColor: black;
   align-items: $align;
 }
 
-@mixin cardStyles() {
+///
+/// Assigns styles for blocks
+///
+@mixin blockStyles() {
   color: $mainColor;
   background-color: $secondaryColor;
   opacity: 0.9;
 }
 
+///
+/// Changes the buttons color on hover
+///
 @keyframes buttonsAnimation {
   from {
     color: $mainColor;
@@ -46,7 +63,7 @@ body {
 
 header {
   @include flex(row, flex-end, center);
-  @include cardStyles();
+  @include blockStyles();
   @include media("<=tablet") {
     @include flex(row, space-evenly, center);
   }
@@ -67,7 +84,7 @@ header {
 
 .introduction {
   @include flex(column, space-around, center);
-  @include cardStyles();
+  @include blockStyles();
   @include media("<=tablet") {
     height: 400px;
   }
@@ -86,7 +103,7 @@ header {
 
 .menu {
   @include flex(column, space-evenly, center);
-  @include cardStyles();
+  @include blockStyles();
   text-align: center;
   padding: 20px;
   button {
@@ -121,7 +138,7 @@ header {
 
 .contactarea1 {
   @include flex(column, space-evenly, center);
-  @include cardStyles();
+  @include blockStyles();
   width: 200px;
   margin-bottom: 50px;
   text-align: center;

@@ -4,18 +4,27 @@ import MenuItem from './MenuItem';
 
 function Menu() {
 
-  /**
-   * The getDay() method returns the day of the week (from 0 to 6) for the specified date.
-   * Note: Sunday is 0, Monday is 1, and so on.
-   */
-
+  /*
+  Returns the number of the current day
+  First value is 0 (Sunday), last value is 6 (Saturday)
+  The number is assigned to the state 'day' as a default value
+  */
   var currentDay = new Date().getDay();
+
   const [day, setDay] = useState(currentDay);
 
+  /**
+   * Changes the day number of the 'day' state
+   * @param {Integer} dayNumber - Number of the day that will be updated to the state
+   */
   const changeDay = (dayNumber) => {
     setDay(dayNumber)
   };
 
+  /**
+   * Shows the food menu based on the day number in the state
+   * @param {Integer} dayNumber - Number of the day that determines the menu to be shown
+   */
   const renderMenu = (dayNumber) => {
     switch (dayNumber) {
       case 1:

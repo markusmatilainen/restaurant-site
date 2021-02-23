@@ -1,3 +1,7 @@
+/*
+Library that provides simple, elegant and maintainable media queries in Sass.
+@author Eduardo Boucas
+*/
 @-webkit-keyframes buttonsAnimation {
   from {
     color: white;
@@ -8,7 +12,6 @@
     background-color: white;
   }
 }
-
 @keyframes buttonsAnimation {
   from {
     color: white;
