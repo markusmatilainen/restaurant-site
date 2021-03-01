@@ -27,6 +27,8 @@ function Menu() {
    */
   const renderMenu = (dayNumber) => {
     switch (dayNumber) {
+      case 0:
+        return <h2>Restaurant closed</h2>;
       case 1:
         return <MenuItem day="Monday" main="Pizza ai quattro formaggi" dessert="Panettone" />;
       case 2:
@@ -39,8 +41,6 @@ function Menu() {
         return <MenuItem day="Friday" main="Spaghetti" dessert="Gelato" />;
       case 6:
         return <h2>No lunch for today</h2>;
-      case 0:
-        return <h2>Restaurant closed</h2>;
       default:
         break;
     }
