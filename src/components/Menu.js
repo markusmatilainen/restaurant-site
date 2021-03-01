@@ -14,7 +14,7 @@ function Menu() {
   const [day, setDay] = useState(currentDay);
 
   /**
-   * Changes the day number of the 'day' state
+   * Changes the number of the 'day' state
    * @param {Integer} dayNumber - Number of the day that will be updated to the state
    */
   const changeDay = (dayNumber) => {
@@ -22,7 +22,7 @@ function Menu() {
   };
 
   /**
-   * Shows the food menu based on the day number in the state
+   * Shows the food menu for the day defined in the state 'day'
    * @param {Integer} dayNumber - Number of the day that determines the menu to be shown
    */
   const renderMenu = (dayNumber) => {
