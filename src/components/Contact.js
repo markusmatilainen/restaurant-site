@@ -16,15 +16,15 @@ function Contact() {
       <div className="contactarea2">
         <h2>Contact Form</h2>
         <form className="contactform" id="form">
-          <div className="formcontainer">
+          <div className="fieldcontainer">
             <label for="fname">First name</label>
             <input type="text" id="fname" name="fname" />
           </div>
-          <div className="formcontainer">
+          <div className="fieldcontainer">
             <label for="lname">Last name</label>
             <input type="text" id="lname" name="lname" />
           </div>
-          <div className="formcontainer">
+          <div className="fieldcontainer">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" />
           </div>

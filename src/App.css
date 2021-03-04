@@ -274,7 +274,7 @@ header .app-link:hover {
   height: 600px;
 }
 
-.contactform .formcontainer {
+.contactform .fieldcontainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
