@@ -10,5 +10,6 @@ Website for an imaginary Italian restaurant.
 
 ## Technologies
 
-* [React](https://reactjs.org) - An open-source frontend framework based on React
-* [Sass](https://sass-lang.com) - A language for styling web pages
+* [React](https://reactjs.org) - A JavaScript library for building modern user interfaces
+* [Sass](https://sass-lang.com) - Preprocessor scripting language that is interpreted or compiled into CSS
+* [include-media](https://eduardoboucas.github.io/include-media/) - Sass library for writing CSS media queries in an easy and maintainable way, using a natural and simplistic syntax
