@@ -100,7 +100,7 @@ header .app-link:hover {
   cursor: pointer;
 }
 
-.introduction {
+.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,23 +121,23 @@ header .app-link:hover {
 }
 
 @media (max-width: 768px) {
-  .introduction {
+  .home {
     height: 400px;
   }
 }
 
 @media (max-width: 320px) {
-  .introduction {
+  .home {
     height: 500px;
   }
 }
 
-.introduction .intro-text {
+.home .intro-text {
   width: 80%;
 }
 
 @media (min-width: 1024px) {
-  .introduction .intro-text {
+  .home .intro-text {
     width: 60%;
   }
 }

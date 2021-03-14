@@ -82,7 +82,7 @@ header {
   }
 }
 
-.introduction {
+.home {
   @include flex(column, space-around, center);
   @include blockStyles();
   @include media("<=tablet") {

@@ -1,9 +1,9 @@
 import React from "react";
 import '../App.css';
 
-function Introduction() {
+function Home() {
   return (
-    <div className="introduction">
+    <div className="home">
         <h1>Restaurant Gustoso</h1>
         <p className="intro-text">Restaurant Gustoso aims to be one of the finest Italian restaurant in Rome!
           Since 2006, we have been one of the most enjoyable places to sit down and enjoy meals
@@ -21,4 +21,4 @@ function Introduction() {
   );
 }
 
-export default Introduction;
+export default Home;
